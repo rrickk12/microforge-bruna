@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}Microforge - Contato{% endblock %}
+{% block description %}Entre em contato com os nossos cientistas{% endblock %}
+
+{% block content %}
+<main>
+  <div class="p-8">
+    <h2 class="mb-10 text-3xl font-bold text-teal-900">
+      Entre em contato conosco!
+    </h2>
+    <div class="grid md:grid-cols-2">
+      
+      <!-- Contact Form Component -->
+      {% include "components/contact_form.html" %}
+
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1192.6309798910177!2d-47.1564439403725!3d-22.78109793525346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8bf1b5d51237f%3A0xf8e221e5543ac1d!2sMicro%20Forge%20Ind%C3%BAstria%20e%20Com%C3%A9rcio%20de%20Reagentes%20Ltda!5e0!3m2!1sen!2sbr!4v1672754099549!5m2!1sen!2sbr"
+          class="mb-5 border-none"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        
+        <div class="flex flex-col items-start gap-10">
+          <div class="flex items-center gap-4">
+            <i class="fa-sharp fa-solid fa-location-dot rounded-full bg-teal-500 p-2 text-white"></i>
+            <p>
+              Av Prefeito José Lozano Araújo 1136B
+              <br />Jardim Ypê, Paulínia, Sp, CEP 13140-558
+            </p>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fa-brands fa-whatsapp rounded-full bg-teal-500 p-2 text-white"></i>
+            <p>(19) 99945-3544</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-phone rounded-full bg-teal-500 p-2 text-white"></i>
+            <p>(19) 3844-3051</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fa-solid fa-envelope rounded-full bg-teal-500 p-2 text-white"></i>
+            <p>comercial@micro-forge.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

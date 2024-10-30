@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex flex-col items-center p-8">
+    <h2 class="mb-10 self-start text-3xl font-bold text-teal-900">
+        Pesquisa e Desenvolvimento é o cerne do nosso negócio
+    </h2>
+    <p class="mb-10 w-3/4 text-justify">
+        Adoramos novos desafios e projetos, e adoramos pensar em alternativas
+        inovadoras que criam novas oportunidades e modelos de negócio. Um dos
+        pilares centrais da Microforge é a pesquisa, por isso nossos cientistas
+        estão sempre preparados para inovar e gerar soluções para o seu
+        laboratório ou negócio!
+    </p>
+    <a
+        target="_blank"
+        class="max-w-1/4 mb-20 rounded-lg bg-teal-900 p-2 text-center text-white hover:bg-amber-500"
+        rel="noopener noreferrer"
+        href="https://api.whatsapp.com/send?phone=5519999453544&text=Ol%C3%A1!%20Gostaria%20de%20ajuda%20para%20um%20planejamento%20experimental"
+        >Quero falar com um cientista
+    </a>
+    <h2 class="mb-10 self-start text-3xl font-bold text-teal-900">
+        Confira alguns de nossos cases de sucesso
+    </h2>
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-lg border p-2">
+            <img src="{{ url_for('static', filename='images/sample_drawing/tecidos.webp') }}" class="mx-auto" alt="Sabiá tecidos" />
+            <h3 class="mb-2 text-center text-lg text-teal-900">Sabiá tecidos</h3>
+            <p class="text-justify">
+                O kit de tecidos da Linha Sabiá foi desenvolvido inicialmente para
+                atender a demanda de um de nossos parceiros, que precisava de uma
+                extração efetiva para nadadeiras de peixes. Realizamos este
+                desenvolvimento e customização e hoje melhoramos o kit para diferentes
+                tipos de tecidos.
+            </p>
+        </div>
+        <div class="rounded-lg border p-2">
+            <img src="{{ url_for('static', filename='images/maracaja.webp') }}" class="mx-auto w-60" alt="Lise Rápida Maracajá" />
+            <h3 class="mb-2 text-center text-lg text-teal-900">
+                Lise Rápida Maracajá
+            </h3>
+            <p class="text-justify">
+                A Linha Maracajá iniciou também por conta da demanda de outro parceiro
+                nosso, que já utilizava soluções de lise rápida em sua rotina
+                laboratorial para o diagnóstico de COVID-19 e não tinha tempo hábil
+                para testar nossa extração viral da Linha Sabiá devido ao alto fluxo
+                de exames. Nossa solução permitiu a redução de custos e uma entrega
+                mais ágil dos resultados dos exames.
+            </p>
+        </div>
+        <div class="rounded-lg border p-2">
+            <img src="{{ url_for('static', filename='images/partners/innovation_group.webp') }}" class="mx-auto w-[19rem]" alt="Parcerias com universidades" />
+            <h3 class="mb-2 text-center text-lg text-teal-900">
+                Parcerias com universidades
+            </h3>
+            <p class="text-justify">
+                Somos uma empresa-filha da Unicamp, e estamos em constante sintonia
+                com as universidades estaduais e federais de nosso país, assim como
+                centros de pesquisa, em busca de inovação e melhorias para a Biologia
+                Molecular como um todo.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

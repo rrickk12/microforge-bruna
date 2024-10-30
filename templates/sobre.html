@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Microforge - Sobre nós{% endblock %}
+{% block description %}Nossa empresa surgiu da Unicamp como anseio de nossos cientistas em mudar o paradigma atual no fornecimento de insumos de biomol{% endblock %}
+
+{% block content %}
+<main class="lg:mx-28">
+  <div class="p-8">
+    <h2 class="mb-10 text-3xl font-bold text-teal-900">Nossa motivação</h2>
+    <div class="mb-10 grid gap-10 md:grid-cols-2">
+      {% include "components/motivation.html" with context %}
+    </div>
+    
+    <section>
+      <h2 class="mb-10 text-3xl font-bold text-teal-900">
+        Se você se identificou com algum desses relatos, você precisa conhecer
+        a Microforge!
+      </h2>
+      <p class="mb-10 text-justify">
+        Somos uma empresa nacional, criada por doutorandos e ex-alunos da
+        UNICAMP, e que repetidas vezes nos vimos em situações parecidas com
+        essas. Queremos fazer diferente, e para isso devemos mudar a forma
+        como atualmente se faz a venda dos insumos de laboratório. Queremos
+        resgatar nos pesquisadores cansados e conformados com a “política” da
+        ciência a beleza da experimentação. Queremos tornar a ciência
+        prazerosa para quem faz, encantadora para quem vive e biorreverente.
+        Queremos transparência, parceria e aprender com nossos cientistas,
+        para cada vez mais entregar produtos que realmente façam a diferença
+        no dia a dia para que você consiga focar no que realmente importa nos
+        seus experimentos: <strong>chegar à verdade</strong>.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="mb-10 text-3xl font-bold text-teal-900">
+        Por que as linhas tem nomes de animais?
+      </h2>
+      <img
+        src="{{ url_for('static', filename='images/products/productPageHead.webp') }}"
+        alt="Animais da Microforge"
+        class="mx-auto mb-5 lg:w-1/2"
+      />
+      <p class="text-justify">
+        A ciência no nosso Brasil é de grande qualidade. Porém muitas vezes
+        ignoramos esse fato, ou damos maior valor ao que é estrangeiro e
+        importado, seja produtos, pesquisa ou soluções. Queremos resgatar o
+        encanto pelo nacional, e seguindo nosso propósito biorreverente,
+        batizamos nossas linhas de produtos principais em homenagem aos
+        animais da nossa fauna!
+      </p>
+    </section>
+  </div>
+</main>
+{% endblock %}

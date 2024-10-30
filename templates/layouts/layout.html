@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    {% include "components/gtm.html" %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="facebook-domain-verification" content="ynigf6melo8nt2mlz4rmriiv2sjbkh" />
+    <link rel="icon" type="image" href="{{ url_for('static', filename='cropped-uforge_icon.webp') }}" />
+    {% if description %}
+        <meta name="description" content="{{ description }}" />
+    {% endif %}
+    <title>{{ title }}</title>
+</head>
+
+<body class="flex min-h-screen flex-col text-gray-700">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5MHTN6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% include "components/header.html" %}
+    {% include "components/cart_flyout.html" %}
+    {% block content %}{% endblock %}
+    {% include "components/cookie_consent.html" %}
+    {% include "components/contact_button.html" %}
+    {% include "components/footer.html" %}
+</body>
+</html>

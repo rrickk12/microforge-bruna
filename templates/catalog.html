@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}Microforge - Confira nossos produtos{% endblock %}
+{% block description %}Insumos para biomol. Kits de extração de DNA e RNA, Lise Celular, Agarose, Racks Magnéticas à pronta entrega. Preço acessível e com suporte técnico especializado{% endblock %}
+
+{% block content %}
+<div class="flex flex-col items-center p-8">
+    <h2 class="mb-10 text-center text-3xl font-bold text-teal-900">Catálogo de Produtos</h2>
+    <div class="w-3/4">
+        <hr class="mx-auto mb-10 border-teal-800" />
+
+        <!-- Product Categories -->
+        <div class="grid gap-2 md:grid-cols-3">
+            <div class="flex flex-col items-center gap-2">
+                <h3 class="text-center text-xl text-teal-900">Extração de DNA e RNA</h3>
+                <a class="text-center text-teal-900 hover:text-teal-800" href="{{ url_for('catalog') }}/extracao-dna-rna-magnetica">Linha Sabiá (Beads Magnéticas)</a>
+                <a class="text-center text-teal-900 hover:text-teal-800" href="{{ url_for('catalog') }}/lise-rapida">Linha Maracajá (Lise Rápida)</a>
+                <a class="text-center text-teal-900 hover:text-teal-800" href="{{ url_for('catalog') }}/extracao-dna-rna-precipitacao">Linha Saíra (Precipitação)</a>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <h3 class="text-xl text-teal-900">Acessórios</h3>
+                <a class="text-teal-900 hover:text-teal-800" href="#acessorios-section">Racks Magnéticas</a>
+                <a class="text-teal-900 hover:text-teal-800" href="#acessorios-section">Plásticos</a>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <h3 class="text-xl text-teal-900">Soluções</h3>
+                <a class="text-teal-900 hover:text-teal-800" href="#solucoes-section">Soluções</a>
+            </div>
+        </div>
+
+        <hr class="mx-auto mt-10 border-teal-800" />
+
+        <!-- Product Groups and Products -->
+        {% for product_group, color in product_groups_with_colors %}
+            <div class="{{ color }} p-4 rounded-lg mb-6">
+                <h3 class="text-2xl font-bold">{{ product_group.title }}</h3>
+                <p class="mb-2">{{ product_group.descriptionExcerpt }}</p>
+                <div class="grid gap-4 md:grid-cols-3">
+                    {% for product in products %}
+                        {% if product.slug.startswith(product_group.slug) %}
+                            <div class="border rounded-lg p-4">
+                                <img src="{{ url_for('static', filename='images/' ~ product.image) }}" alt="{{ product.name }}" class="w-full mb-4"/>
+                                <h4 class="text-xl">{{ product.name }}</h4>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
